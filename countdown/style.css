@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    background-image: url("./background_img.jpg");
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lato";
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    margin-top: 10rem;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.counter-el {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.num-label {
+    font-size: 1.5rem;
+}
+
+.num-box {
+    font-size: 5rem;
+    font-weight: 500;
+    margin-bottom: -1rem;
+}

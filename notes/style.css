@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: Lato;
+    background-color: white;
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button:enabled {
+    outline: none;
+}
+
+.toolbar {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #ffec40;
+    border-bottom: 2px solid #ff791f;
+}
+
+.toolbar button {
+    margin: 5px 5px;
+    min-width: 40px;
+    min-height: 40px;
+    color: #ff791f;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: none;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.new-note-area {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 90);
+    box-shadow: 5px 5px 10px 0 grey;
+    padding: 10px 10px;
+}
+
+.new-note-area textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 90%;
+    flex-grow: 1;
+    resize: none;
+    background-color: inherit;
+    border: none;
+}
+
+.new-note-area textarea:enabled {
+    outline: none;
+}
+
+.note-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.note-toolbar button {
+    margin-left: 10px;
+    font-weight: 600;
+    background-color: transparent;
+    border-width: thin;
+    border-radius: 2px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    box-shadow: 1px 1px 2px 0 grey;
+}
+
+.note-toolbar button:hover {
+    background-color:rgb(255, 225, 90);
+}
+
+.notes-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.note {
+    width: 200px;
+    height: 200px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.delete-note-button {
+    position: absolute;
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+}
+
+.delete-note-button .fas {
+    color: gray;
+}
+
+/*icons styling*/
+.fa-pencil-alt {
+    color: #ff791f;
+    background-color: transparent;
+}
+
+.fa-trash-alt {
+    color: #ff791f;
+    background-color: transparent;
+}
+
+.toolbar button:hover {
+    color: black;
+}
+
+.toolbar button:hover i {
+    color: inherit;
+}

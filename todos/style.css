@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato";
+    background-color: #d1ffea;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.todo-form {
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 3px 2px 3px 0 #c5c5c5;
+}
+
+.todo-input {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 5px 5px;
+    font-size: 1.8rem;
+    border: none;
+}
+
+input:enabled {
+    outline: none;
+}
+
+.todo-input::placeholder {
+    color: #d1d1d1;
+}
+
+.todo-list {
+    list-style-type: none;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.todo-list li {
+    padding: 5px 5px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.todo-checkbox {
+    margin-left: 0;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #acaaaa;
+}
+
+.delete {
+    margin: auto;
+    width: max-content;
+    text-align: center;
+    color: rgb(223, 0, 0);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+label {
+    cursor: pointer;
+}
