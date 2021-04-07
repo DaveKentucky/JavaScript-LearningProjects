@@ -9,11 +9,14 @@ class Note {
     constructor(text) {
         this.text = `${text}`;
         this.color = "rgb(255, 255, 90)";
-        console.log(this.text);
     }
 }
 
 newNoteBtn.addEventListener('click', () => {
+    if(deleteBtn.classList.contains('active')) {
+        deleteBtn.classList.toggle('active');
+        removeDeleteButtons();
+    }
     newNoteEl.style.display = 'flex'
 })
 
@@ -36,17 +39,49 @@ function addNoteDiv(note) {
     const noteEl = document.createElement('div');
     noteEl.className = 'note';
     noteEl.setAttribute('style', `background-color: ${note.color}`);
-    noteEl.innerHTML = note.text;   
+    noteEl.innerText = note.text;   
     notesAreaEl.appendChild(noteEl);
 }
 
 deleteBtn.addEventListener('click', () => {
-    const notes = [...document.getElementsByClassName('note')];
-    notes.forEach(note => {
-        let deleteEl = document.createElement('button');
-        deleteEl.className = 'delete-note-button';
-        deleteEl.innerHTML = '<i class="fas fa-trash-alt fa-3x"></i>';
-        
-        note.appendChild(deleteEl);
-    });
+    deleteBtn.classList.toggle('active');
+    if(deleteBtn.classList.contains('active')) {
+        addDeleteButtons();
+    } else {
+        removeDeleteButtons();
+    }
 })
+
+function addDeleteButtons() {
+    const notes = [...document.getElementsByClassName('note')];
+    const notesAreaEl = document.querySelector('div.notes-area');
+    if(notes.length > 0) {
+        notes.forEach(note => {
+            let deleteEl = note.querySelectorAll('button.delete-note-button');
+            if(deleteEl.length == 0) {
+                deleteEl = document.createElement('button');
+                deleteEl.className = 'delete-note-button';
+                deleteEl.innerHTML = '<i class="fas fa-trash-alt fa-3x"></i>';
+                deleteEl.addEventListener('click', () => {
+                    notesAreaEl.removeChild(note);
+                    if(notesAreaEl.children.length == 0) {
+                        deleteBtn.classList.toggle('active');
+                    }
+                })
+                note.appendChild(deleteEl);
+            }
+        });
+    }
+}
+
+function removeDeleteButtons() {
+    const notes = [...document.getElementsByClassName('note')];
+    if(notes.length > 0) {
+        notes.forEach(note => {
+            let deleteEl = note.querySelector('button.delete-note-button');
+            if(deleteEl != undefined) {
+                note.removeChild(deleteEl);
+            }
+        });
+    }
+}

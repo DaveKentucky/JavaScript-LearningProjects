@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/*general*/
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Lato;
     background-color: white;
@@ -13,6 +18,7 @@ button:enabled {
     outline: none;
 }
 
+/*toolbar*/
 .toolbar {
     display: block;
     height: 50px;
@@ -34,6 +40,7 @@ button:enabled {
     overflow: hidden;
 }
 
+/*edit note widget*/
 .new-note-area {
     display: none;
     position: absolute;
@@ -89,6 +96,11 @@ button:enabled {
     background-color:rgb(255, 225, 90);
 }
 
+.active {
+    background-color: #cccccc !important;
+}
+
+/*notes*/
 .notes-area {
     display: flex;
     flex-wrap: wrap;
@@ -97,26 +109,34 @@ button:enabled {
 }
 
 .note {
+    position: relative;
     width: 200px;
     height: 200px;
     padding: 10px 10px;
     margin: 10px 10px;
+    overflow: visible;
 }
 
 .delete-note-button {
     position: absolute;
-    display: inline-flex;
-    width: 60px;
-    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    align-self: center;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     background-color: transparent;
     border: none;
+}:hover {
+    opacity: 1;
 }
 
-.delete-note-button .fas {
-    color: gray;
-}
-
-/*icons styling*/
+/*icons*/
 .fa-pencil-alt {
     color: #ff791f;
     background-color: transparent;
@@ -133,4 +153,8 @@ button:enabled {
 
 .toolbar button:hover i {
     color: inherit;
+}
+
+.delete-note-button .fas {
+    color: rgb(158, 158, 158);
 }
