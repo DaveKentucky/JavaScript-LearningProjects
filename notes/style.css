@@ -41,7 +41,7 @@ button:enabled {
 }
 
 /*edit note widget*/
-.new-note-area {
+.edit-note-area {
     display: none;
     position: absolute;
     left: 50%;
@@ -59,7 +59,7 @@ button:enabled {
     padding: 10px 10px;
 }
 
-.new-note-area textarea {
+.edit-note-area textarea {
     max-width: 100%;
     min-width: 100%;
     min-height: 90%;
@@ -69,7 +69,7 @@ button:enabled {
     border: none;
 }
 
-.new-note-area textarea:enabled {
+.edit-note-area textarea:enabled {
     outline: none;
 }
 
@@ -115,6 +115,7 @@ button:enabled {
     padding: 10px 10px;
     margin: 10px 10px;
     overflow: visible;
+    cursor: pointer;
 }
 
 .delete-note-button {
