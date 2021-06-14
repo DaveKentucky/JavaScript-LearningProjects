@@ -1,7 +1,7 @@
 const inputEl = document.getElementById("todo-input");
 const listEl = document.getElementById("todo-list");
 const formEl = document.getElementById("todo-form");
-const deleteEl = document.getElementById("delete");
+const deleteEl = document.querySelector(".delete");
 
 const todos = JSON.parse(localStorage.getItem('todos'));
 if(todos) {
@@ -44,7 +44,6 @@ function addTodo(todo) {
         // set checkbox's attributes
         checkboxEl.setAttribute('type', 'checkbox');
         checkboxEl.setAttribute('id', id);
-        checkboxEl.classList.add('todo-checkbox');
         // set label's attributes
         checkboxLabelEl.setAttribute('for', id);
         checkboxLabelEl.append(todoText);
@@ -68,7 +67,7 @@ function addTodo(todo) {
 
 function updateLocalStorage() {
     const todos = [];
-    const todoListItemsEl = document.querySelectorAll('li');
+    const todoListItemsEl = document.querySelectorAll('.todo-list li');
     todoListItemsEl.forEach(item => {
         todos.push({
             text: item.innerText,
@@ -77,4 +76,15 @@ function updateLocalStorage() {
     });
 
     localStorage.setItem('todos', JSON.stringify(todos));
+    toggleDeleteVisibility();
+}
+
+function toggleDeleteVisibility() {
+    const listItems = document.querySelectorAll('.todo-list li');
+    if(listItems.length > 0) {
+        deleteEl.style.display = 'block';
+    }
+    else {
+        deleteEl.style.display = 'none';
+    }
 }
