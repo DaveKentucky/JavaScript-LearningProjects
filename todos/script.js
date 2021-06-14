@@ -1,6 +1,6 @@
-const inputEl = document.getElementById("todo-input");
-const listEl = document.getElementById("todo-list");
-const formEl = document.getElementById("todo-form");
+const inputEl = document.querySelector(".todo-input");
+const listEl = document.querySelector(".todo-list");
+const formEl = document.querySelector(".todo-form");
 const deleteEl = document.querySelector(".delete");
 
 const todos = JSON.parse(localStorage.getItem('todos'));
